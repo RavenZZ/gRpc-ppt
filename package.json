@@ -1,0 +1,22 @@
+{
+  "name": "grpc-ppt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RavenZZ/gRpc-ppt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RavenZZ/gRpc-ppt/issues"
+  },
+  "dependencies":{
+    "nodeppt":"1.4.2"
+  },
+  "homepage": "https://github.com/RavenZZ/gRpc-ppt#readme"
+}
