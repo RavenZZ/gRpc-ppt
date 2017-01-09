@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " nodeppt start -p 8888 -d ./ -H 192.168.1.2"
   },
   "repository": {
     "type": "git",
