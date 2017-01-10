@@ -385,9 +385,22 @@ namespace MD.Logger.Impl
 
 [slide style="background-image:url('/img/hero-bg.png')"]
 
-# 水平扩展
+# nginx 水平扩展 + 负载均衡
+<pre><code class="nginx">
 
+stream {
+    upstream stream_backend {
+        server 127.0.0.1:50051;
+        server 127.0.0.1:50052;
+    }
 
+    server {
+        listen 8082 http2; #support http2
+        proxy_pass stream_backend;
+    }
+}
+
+</code></pre>
 
 [slide style="background-image:url('/img/hero-bg.png')"]
 
