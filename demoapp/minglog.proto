@@ -1,0 +1,252 @@
+﻿/**
+ * Created by Raven on 2017-01-05
+ */
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "md.logservice";
+option java_outer_classname = "Logger";
+option objc_class_prefix = "LLL";
+
+package minglogger;
+
+// The log service definition.
+service LogService {
+  // Sends a greeting
+  rpc WriteLog (MingLog) returns (ExecuteResult) {}
+}
+
+// The request message containing the user's name.
+message MingLog {
+  // 时间戳 
+  // example: 1483583631190
+  int32 timeStamp = 1;
+  //服务器主机名
+  // example: cw_web,cw_meihua
+  string hostName = 2;
+  //服务类型
+  // example : Master= 主站
+  ServiceType serviceType = 3;
+  // 日志记录者
+  // example: Raven
+  Developer developer = 4;
+  // 服务Ip
+  string  clientIp = 5;
+  // 错误Stack信息
+  string stack = 6;
+  // 日志文本信息
+  string message = 7;
+  // 操作类型
+  // example: "createtask","sendpush"
+  string action = 8;
+  // 当前用户accountid
+  string accountId = 9;
+  //当前用户projectid
+  string projectId = 10;
+  // 日志级别
+  LogLevel level = 11;
+  // 其他有用的信息字典
+  repeated Extras extras = 12;
+}
+
+// 其他有用的信息
+message Extras {
+	string key = 1;
+    string value = 2;
+}
+// 操作执行结果
+message ExecuteResult {
+	// 操作是否执行成功
+	bool isSuccess = 1;
+	// 错误信息
+    string error = 2;
+}
+
+// 日志级别
+enum LogLevel{
+	// 对调试应用程序是非常有帮助
+	Debug = 0;
+	// 突出强调应用程序的运行过程
+	Info = 1;
+	// 会出现潜在错误的情形
+	Warn = 2;
+	// 已出现的错误, 但不影响系统的继续运行
+	Error = 3;
+	// 严重的错误事件将会导致应用程序的退出
+	Fatal = 4;
+}
+
+// 服务类型
+enum ServiceType {
+	//未知
+	Unknown = 0;
+	//主站
+	//mingdao.com
+	//repo: MD_Public
+	//folder: MHMD.Web
+	Master = 1;
+	//API
+	//api.mingdao.com
+	//repo: MD_Public
+	//folder: MD.API
+	API = 2;
+	// 日程Push服务
+	// Windows服务
+	//repo: MD_Public
+	//folder: MD.CalendarService
+	CalendarService = 3;
+	// 项目统计服务
+	//repo: MD_Public
+	//folder: FolderStatisticsService
+	FolderStatistics = 4;
+	//RabbitMQ Solor 消费端服务
+	//repo: MD_Public
+	//MD.RabbitMQConsumerService
+	RabbitMQSolorConsumerService = 5;
+	// 发送邮件服务
+	//repo: MDServices-CSharp
+	//folder: MD.Email.API
+	EmailSenderService = 6;
+	// 短信服务
+	//repo: MDServices-CSharp
+	//folder: MD.Sms.API
+	SmsSenderService = 7;
+	// WebHook 
+	//repo: MDServices-CSharp
+	//folder: MD.WebHook.API
+	WebHook = 8;
+	// Chat Socket 连接
+	//repo: MDNode
+	//folder: MD.Messager
+	ChatSocket = 9;
+	// Chat 内部API
+	//repo: MDNode
+	//folder: MD.Messager
+	ChatApi = 10;
+	// Chat HTTP 
+	// chatmq.mingdao.com
+	//repo: MDNode
+	//folder: MD.Messager
+	ChatHttp = 11;
+	// Chat 群聊头像服务
+	// avatar.mingdao.com
+	//repo: MDNode
+	//folder: MD.Messager
+	ChatAvatar = 12;
+	// Chat 队列服务
+	//repo: MDNode
+	//folder: MD.Messager
+	ChatQueue = 13;
+	// 邮件连接器
+	//repo: MDNode 
+	//folder: MD.Mail_v2
+	MyMail = 14;
+	// 邮件连接器 扫描本地文件上传服务
+	//repo: MDNode
+	//folder: uploadqiniu
+	MyMailUploader = 15;
+	// 邮件连接器 静态附件承载服务
+	//repo: MDNode
+	//folder: MD.MailFileserver
+	MyMailFileService = 16;
+	// 运维工具
+	//repo: MDTools
+	//folder: /
+	OpTool = 17;
+	// 三方账号联合登录服务
+	//repo: MDServices
+	//folder: MD.TPLogin
+	TpLogin = 18;
+	// 短链生成服务
+	//repo: MDServices
+	//folder: MD.UrlParser
+	UrlParser = 19;
+	// 微信公众号服务
+	//repo: MDServices
+	//folder: MD.Weixin
+	WeixinMPService = 20;
+	// 明道大使
+	//repo: MDServices
+	//folder: MD.LP
+	LP=21;
+	// OWA
+	//repo: MDServices
+	//folder: MD.OWA
+	OwaService = 22;
+	// 实体关联服务
+	//repo: MDServices
+	//folder: MD.Relation
+	RelationService = 23;
+	//计数服务(外网)
+	//mq.mingdao.com
+	//repo: MDNotification 
+	//folder: MD.Notification
+	Counting = 24;
+	// 计数服务(内网)
+	//repo: MDNotification 
+	//folder: MD.Notification
+	CountingInternal = 25;
+	// App Push 服务
+	//repo: MDNotification
+	//folder: MD.PushMQ
+	PushQueue = 26;
+	// Push Server API 服务
+	//repo: MDNotification
+	//folder: MD.Pushserver
+	PushServer = 27;
+	// 会议室预定
+	//repo: MDApps 
+	//folder: MD.bookMeeting
+	Meetingroom=28;
+	// 开放平台
+	//open.mingdao.com
+	//repo: MDOpen
+	//folder: MDOpen
+	Open = 29;
+	//Manage
+	//manage.mingdao.com
+	//repo: MDManage
+	//folder: /
+	MDManage = 30;
+	// 审批
+	//repo: MDPlus 
+	//folder: /
+	Approval = 31;
+	// OA
+	//repo: MDOA
+	//folder: /
+	OA = 32;
+	// Mingdao内部 CRM
+	//repo: MDCRM2.0 
+	//folder: /
+	MDCRM = 33;
+}
+
+// 明道 developers
+enum Developer{
+	// 未知
+	Undefined = 0;
+	// RavenZhu 朱颖骏
+	RavenZhu =1;
+	// 	金可伟
+	JerryJin = 2;
+	//  俞杭杰
+	EricYu = 3;
+	// 邹昕
+	SinZou= 4;
+	// 沈阳
+	WellsShen = 5;
+	// 高喜庆
+	CarloseGao = 6;
+	// 吴群群
+	LeoWu = 7;
+	// 杨广
+	TobyYang = 8;
+	// 朱斌
+	RennbonZhu=9;
+	// 奶茶贝
+	BeckJin = 10;
+	// 孙伟
+	AllenSun = 11;
+}

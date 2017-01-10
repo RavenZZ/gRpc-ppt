@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MingLogger", "MingLogger\MingLogger.csproj", "{AF0BAFB7-2B74-484D-83D7-236E755C96ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F20270E8-3CD9-413B-B03C-F3A7F12DF441}"
+	ProjectSection(SolutionItems) = preProject
+		generate_protos.bat = generate_protos.bat
+		..\..\minglog.proto = ..\..\minglog.proto
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc-client", "grpc-client\grpc-client.csproj", "{73979E56-F0B3-42B1-960F-DF5A96FD380C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc-server", "grpc-server\grpc-server.csproj", "{5D0F0D18-1312-42DB-81D1-974ADD6A01EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF0BAFB7-2B74-484D-83D7-236E755C96ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0BAFB7-2B74-484D-83D7-236E755C96ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0BAFB7-2B74-484D-83D7-236E755C96ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0BAFB7-2B74-484D-83D7-236E755C96ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73979E56-F0B3-42B1-960F-DF5A96FD380C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73979E56-F0B3-42B1-960F-DF5A96FD380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73979E56-F0B3-42B1-960F-DF5A96FD380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73979E56-F0B3-42B1-960F-DF5A96FD380C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D0F0D18-1312-42DB-81D1-974ADD6A01EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D0F0D18-1312-42DB-81D1-974ADD6A01EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D0F0D18-1312-42DB-81D1-974ADD6A01EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D0F0D18-1312-42DB-81D1-974ADD6A01EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
