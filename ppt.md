@@ -8,13 +8,13 @@ usemathjax: yes
 
 [slide style="background-image:url('/img/hero-bg.png')"]
 # grpc & protobuf
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 ## 什么是RPC 
 ----
 * 远程过程调用协议 {:&.fadeIn}
 * RPC使得开发包括网络分布式多程序在内的应用程序更加容易
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 # grpc 的优势
 ----
 * Simple service definition (定义服务简单) {:&.fadeIn}
@@ -25,28 +25,28 @@ usemathjax: yes
     * Install runtime and dev environments with a single line and also scale to millions of RPCs per second with the framework
 * Bi-directional streaming and integrated auth (双向流和集成身份验证)
     * Bi-directional streaming and fully integrated pluggable authentication with http/2 based transport
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # 什么是 Protocol Buffers
 ----
 * Protocol buffers are a language-neutral(语言中立), platform-neutral(平台中立) extensible mechanism for serializing structured data
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 ## 性能对比1 序列化数据对比 
 ----
 ![序列化数据对比](/img/compare1.png) {:&.fadeIn}
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 ## 性能对比2 bytes字节数对比 
 ----
 ![bytes字节数对比](/img/compare2.png) {:&.fadeIn}
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 ## 具体数字
 ----
 ![bytes字节数对比](/img/compare3.png) {:&.fadeIn}
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 # grpc 开发步骤
 
 1. Defining the service (定义服务)
@@ -55,7 +55,7 @@ usemathjax: yes
 1. Creating the client
 
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # 支持的语言
 
@@ -70,7 +70,7 @@ usemathjax: yes
 1. Python
 1. Ruby
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 
 # gRPC Example
@@ -99,7 +99,7 @@ service LogService {
 </code></pre>
 
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # MingLog definition
 
@@ -139,7 +139,7 @@ message MingLog {
 
 </code></pre>
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # 枚举定义
 
@@ -316,7 +316,7 @@ enum ServiceType {
 	MDCRM = 33;
 }
 </code></pre>
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # 生成C#代码
 
@@ -335,7 +335,7 @@ set TOOLS_PATH=Tools\Grpc.Tools.0.15.0\tools\windows_x64
 endlocal
 </code></pre>
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # 实现C#服务端代码
 <pre><code class="CSharp">
@@ -366,7 +366,7 @@ namespace MD.Logger.Impl
     server.Start();
 
 </code></pre>
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # C# 客户端调用方式
 <pre><code class="CSharp">
@@ -379,11 +379,11 @@ namespace MD.Logger.Impl
 </code></pre>
 
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # Nodejs 
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 # nginx 水平扩展 + 负载均衡
 <pre><code class="nginx">
@@ -402,7 +402,7 @@ stream {
 
 </code></pre>
 
-[slide style="background-image:url('/img/hero-bg.png')"]
+[slide]
 
 
 # 友情链接
